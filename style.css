@@ -1,0 +1,12 @@
+body {
+  background: linear-gradient(9deg, rgba(58, 57, 57, 0.39), rgba(0, 0, 0, 0.37)),
+    url(./bg.jpg);
+  background-size: cover;
+  min-height: 100vh;
+}
+.card {
+  position: absolute;
+  top: 50%;
+  left: 40%;
+  transform: translateY(-50%);
+}
