@@ -9,4 +9,5 @@ body {
   top: 50%;
   left: 40%;
   transform: translateY(-50%);
+  box-shadow: 0 30px 30px rgba(0,0,0,.5);
 }
