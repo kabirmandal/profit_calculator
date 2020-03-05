@@ -11,3 +11,11 @@ body {
   transform: translateY(-50%);
   box-shadow: 0 30px 30px rgba(0,0,0,.5);
 }
+.card-header{
+    background-color: rgb(162, 2, 255);
+    color:rgb(255, 255, 255);
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    letter-spacing: 3px;
+    font-size: large;
+    text-transform: uppercase;
+}
