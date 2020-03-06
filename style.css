@@ -1,15 +1,9 @@
 body {
-  background: linear-gradient(9deg, rgba(58, 57, 57, 0.39), rgba(0, 0, 0, 0.37)),
-    url(./bg.jpg);
-  background-size: cover;
-  min-height: 100vh;
+  background-color: #6495f0;
 }
 .card {
-  position: absolute;
-  top: 50%;
-  left: 40%;
-  transform: translateY(-50%);
-  box-shadow: 0 30px 30px rgba(0,0,0,.5);
+ max-width: 30em;
+ padding: 7px;
 }
 .card-header{
     background-color: rgb(162, 2, 255);
@@ -18,4 +12,7 @@ body {
     letter-spacing: 3px;
     font-size: large;
     text-transform: uppercase;
+}
+label{
+  font-weight: bold;
 }

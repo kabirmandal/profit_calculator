@@ -12,55 +12,102 @@
   </head>
   <body>
     <div class="container">
-        <div class="card mx-auto shadow" style="max-width: fit-content;">
-            <div class="card-header text-center">
-                Profit Calculator
+        <div class="card mx-auto shadow mt-5 shadow">
+            <div>Insert Your Deposit</div>
+            <div class="row">
+                <div class="col">
+                    <div class="form-group">
+                        <label for="">Amount €</label>
+                        <input type="number" id="amount" min="0" class="form-control form-control-sm">
+                    </div>
+                    <div class="form-group">
+                        <label for="">Monthly Profit %</label>
+                        <input type="number" id="mpp" min="0" class="form-control form-control-sm" value="4" readonly>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="form-group">
+                        <label for="">Years to Grow:</label>
+                        <input type="number" id="ytg" min="0" class="form-control form-control-sm">
+                    </div>
+                    <div class="form-group">
+                        <label for="">Interest is Compounded:</label>
+                        <input type="text" id="iic" class="form-control form-control-sm" value="Daily" readonly>
+                    </div>
+                </div>
             </div>
-            <div class="card-body p-0">
-                <table class="table">
-                    <tr>
-                        <td>Deposit:</td>
-                        <td><input type="number" id="deposit" class="form-control form-control-sm"></td>
-                    </tr>
-                    <tr>
-                        <td>Monthly Interest:</td>
-                        <td><input type="number" id="minterest" class="form-control form-control-sm"></td>
-                    </tr>
-                    <tr>
-                        <td>Daily Interest:</td>
-                        <td><input type="number" id="dinterest" class="form-control form-control-sm"></td>
-                    </tr>
-                </table>
-            </div>
-            <div class="card-footer p-0">
-                <table class="table">
-                    <tr>
-                        <td>Monthly Profit:</td>
-                        <td><span id="monthly_profit"></span></td>
-                    </tr>
-                    <tr>
-                        <td>1 Year Profit:</td>
-                        <td><span id="1YP"></span></td>
-                    </tr>
-                    <tr>
-                        <td>2 Year Profit:</td>
-                        <td><span id="2YP"></span></td>
-                    </tr>
-                    <tr>
-                        <td>3 Year Profit:</td>
-                        <td><span id="3YP"></span></td>
-                    </tr>
-                    <tr>
-                        <td>4 Year Profit:</td>
-                        <td><span id="4YP"></span></td>
-                    </tr>
-                    <tr>
-                        <td>5 Year Profit:</td>
-                        <td><span id="5YP"></span></td>
-                    </tr>
-                </table>
-            </div>
+        </div>
 
+        <div class="card mx-auto mt-5 shadow">
+            <div class="card-text">
+                Total Summary
+            </div>
+            <table class="table">
+                <tr>
+                    <td>Amount </td> <td><span id="showamount"></span></td>
+                </tr>
+                <tr>
+                    <td>Years to grow</td> <td><span id="showytg"></span></td>
+                </tr>
+                <tr>
+                    <td>Monthly Profit %</td> <td><span id="showmpp"></span></td>
+                </tr>
+            </table>
+            <div class="row">
+                <div class="col">
+                    <div class="form-group">
+                        <label for="">Monthly Net Profit €:</label>
+                        <input type="number" id="mnp"class="form-control bg-info" >
+                    </div>
+                    <div class="form-group">
+                        <label for="">Years To Grow Net Profit €:</label>
+                        <input type="number" id="ytgnp"class="form-control bg-info" >
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="form-group">
+                        <label for="">Monthly Gross Profit €:</label>
+                        <input type="number" id="mgp" class="form-control bg-info" >
+                    </div>
+                    <div class="form-group">
+                        <label for="">Years To Grow Gross Profit €:</label>
+                        <input type="number" class="form-control bg-info" >
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card mx-auto mt-5 shadow mb-5">
+            <div class="row">
+                <div class="col">
+                    <div class="form-group">
+                        <label for="">1 Year Net Profit €:</label>
+                        <input type="number" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="">2 Year Net Profit €:</label>
+                        <input type="number" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="">3 Year Net Profit €:</label>
+                        <input type="number" class="form-control">
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="form-group">
+                        <label for="">1 Year Gross Profit €:</label>
+                        <input type="number" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="">2 Year Gross Profit €:</label>
+                        <input type="number" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="">3 Year Gross Profit €:</label>
+                        <input type="number" class="form-control">
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 

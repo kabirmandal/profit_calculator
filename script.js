@@ -1,23 +1,33 @@
 $(document).ready(function () {
-    $("input").on('keyup blur', function () {
-        var deposit = $("#deposit").val(); //B1
-        var minterest = $("#minterest").val();
-        var dinterest = $("#dinterest").val();
-        var mothly_profit = deposit * minterest / 100 + parseFloat(deposit);
-        $("#monthly_profit").text(mothly_profit.toFixed(2));
-
-        function calc(x, y) {
-            var pw1 = 1 + x / 269;
-            var pw2 = y * 269;
-            var pw = Math.pow(pw1, pw2);
-            return deposit*pw;
+    $("input").on("keyup blur change", function () {
+        var amount = $("#amount").val(); // amount
+       // console.log(amount);
+        var mpp = $("#mpp").val(); // Monthly profit percent
+        var ytg = $("#ytg").val(); // years to grow
+        var iic = $("#iic").val(); // Interest is Compounded
+        function calc(x,y){
+        // =B1*(1+((0.48*B4)/269))^(B4*269)
+        var m = 1+x/269;
+        var m = amount*m;
+        var n = y*269;
+        var n = Math.pow(m,n);
+        //console.log(n);
         }
-
-        var P1Y = calc(0.48,1);$("#1YP").text(P1Y.toFixed(2));
-        var P2Y = calc(0.96,2);$("#2YP").text(P2Y.toFixed(2));
-        var P3Y = calc(1.48,3);$("#3YP").text(P3Y.toFixed(2));
-        var P4Y = calc(1.92,4);$("#4YP").text(P4Y.toFixed(2));
-        var P5Y = calc(2.4,5);$("#5YP").text(P5Y.toFixed(2));
+        function cal(){
+            var k = amount*(1+(0.48/269));
+            var m = 1*269;
+            var cc = Math.pow(2,3);
+            console.log(cc);
+        }
+        cal();
+        if (amount !== 'undefined') {
+            $("#showamount").text(amount);
+            $("#showytg").text(ytg);
+            $("#showmpp").text(mpp);
+            $("#mnp").val(amount*0.04);
+            $("#mgp").val(parseFloat(amount)+amount*0.04);
+            //$("#ytgnp").val(cal());
+        }
         
     });
 });
