@@ -13,20 +13,29 @@ $(document).ready(function () {
         var n = Math.pow(m,n);
         //console.log(n);
         }
-        function cal(){
-            var k = amount*(1+(0.48/269));
-            var m = 1*269;
-            var cc = Math.pow(2,3);
-            console.log(cc);
+        function cal(x,y){
+           var dd = amount*(1+x/269) ** (y*269);
+           //console.log(dd);
+           var dd = parseInt(dd.toFixed(2));
+           return dd;
         }
-        cal();
+       // cal(0.48,1);
         if (amount !== 'undefined') {
             $("#showamount").text(amount);
             $("#showytg").text(ytg);
             $("#showmpp").text(mpp);
             $("#mnp").val(amount*0.04);
             $("#mgp").val(parseFloat(amount)+amount*0.04);
-            //$("#ytgnp").val(cal());
+            
+            $("#npy1").val(cal(0.48,1));
+            $("#npy2").val(cal(0.96,2));
+            $("#npy3").val(cal(1.48,3));
+
+            $("#gpy1").val(cal(0.48,3)+0.04);
+            $("#gpy2").val(cal(0.96,3)+0.04);
+            $("#gpy3").val(cal(1.48,3)+0.04);
+
+
         }
         
     });
