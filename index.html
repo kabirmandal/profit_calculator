@@ -27,55 +27,30 @@
                 </div>
                 <div class="col-md-6">
                     <div class="form-group">
-                        <label for="">Years to Grow:</label>
-                        <input type="number" id="ytg" min="0" class="form-control form-control-sm">
+                        <label for="">Months:</label>
+                        <input type="number" id="months" min="0" class="form-control form-control-sm">
                     </div>
                     <div class="form-group">
-                        <label for="">Interest is Compounded:</label>
+                        <label for="">Compound Type:</label>
                         <input type="text" id="iic" class="form-control form-control-sm" value="Daily" readonly>
                     </div>
                 </div>
             </div>
+            <div class="form-group row">
+                <label for="inputEmail3" class="col-md-6 col-form-label">Profit €</label>
+                <div class="col-md-6">
+                  <input type="email" class="form-control form-control-sm bg-info" id="profit" placeholder="" readonly>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="inputEmail3" class="col-md-6 col-form-label">Profit+Deposit €</label>
+                <div class="col-md-6">
+                  <input type="email" class="form-control form-control-sm bg-info" id="profitdeposit" placeholder="" readonly>
+                </div>
+            </div>
         </div>
 
-        <div class="card mx-auto mt-5 shadow">
-            <div class="card-text">
-                Total Summary
-            </div>
-            <table class="table">
-                <tr>
-                    <td>Amount </td> <td><span id="showamount"></span></td>
-                </tr>
-                <tr>
-                    <td>Years to grow</td> <td><span id="showytg"></span></td>
-                </tr>
-                <tr>
-                    <td>Monthly Profit %</td> <td><span id="showmpp"></span></td>
-                </tr>
-            </table>
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="form-group">
-                        <label for="">Monthly Net Profit €:</label>
-                        <input type="number" id="mnp"class="form-control bg-info" readonly>
-                    </div>
-                    <div class="form-group">
-                        <label for="">Years To Grow Net Profit €:</label>
-                        <input type="number" id="ytgnp"class="form-control bg-info" readonly>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="form-group">
-                        <label for="">Monthly Gross Profit €:</label>
-                        <input type="number" id="mgp" class="form-control bg-info" readonly>
-                    </div>
-                    <div class="form-group">
-                        <label for="">Years To Grow Gross Profit €:</label>
-                        <input type="number" id="ytggp" class="form-control bg-info" readonly>
-                    </div>
-                </div>
-            </div>
-        </div>
+
 
         <div class="card mx-auto mt-5 shadow mb-5">
             <div class="row">

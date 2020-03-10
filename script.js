@@ -1,8 +1,8 @@
 $(document).ready(function () {
     $("input").on("keyup blur change", function () {
-        var amount = parseFloat($("#amount").val()); // amount
+        var amount = parseFloat($("#amount").val()); // amount B1
         var mpp = parseFloat($("#mpp").val()); // Monthly profit percent
-        var ytg = parseFloat($("#ytg").val()); // years to grow
+        var months = parseFloat($("#months").val()); // months B4
         var iic = $("#iic").val(); // Interest is Compounded
         function calc(x,y){
         
@@ -25,14 +25,28 @@ $(document).ready(function () {
             return parseInt(dd);
            
         }
+        function profit(B1,B4){
+           var dd = B1*((1+((0.04*B4)/(B4*20))) ** (B4*20))-B1;
+           return dd.toFixed(0);
+        }
+        function profitdepoist(B1,B4){
+            var dd = B1*(1+((0.04*B4)/(B4*20))) ** (B4*20);
+          
+            return dd.toFixed(0);
+         }
+         
+         
+        
        
         if (amount !== 'undefined') {
             $("#showamount").text(amount);
-            $("#showytg").text(ytg);
+           // $("#showytg").text(ytg);
             $("#showmpp").text(mpp);
             $("#mnp").val(amount*0.04);
             $("#mgp").val(parseFloat(amount)+amount*0.04);
             
+            $("#profit").val(profit(amount,months));
+            $("#profitdeposit").val(profitdepoist(amount,months));
             var np1 = cal(0.48,1);
             $("#npy1").val(np1);
             var np2 = cal(0.96,2);
@@ -45,8 +59,8 @@ $(document).ready(function () {
             $("#gpy3").val(Number(amount)+Number(np3));
 
 
-            $("#ytgnp").val(ca(amount,ytg));
-            $("#ytggp").val(ytgcal(amount,ytg));
+           // $("#ytgnp").val(ca(amount,ytg));
+           // $("#ytggp").val(ytgcal(amount,ytg));
         }        
     });
 });
