@@ -33,7 +33,22 @@ $(document).ready(function () {
             var dd = B1*(1+((0.04*B4)/(B4*20))) ** (B4*20);
           
             return dd.toFixed(0);
-         }
+        }
+        function profit1year(B1){
+            var dd = B1*(1+0.48/269) ** (1*269)-B1;
+          
+            return dd.toFixed(0);
+        }
+        var B6 =  profit1year(amount);
+        var pd1y = parseInt(B6)+mpp/100;
+
+        function profit2year(B1){
+            var dd = B1*(1+0.96/269) ** (2*269)-B1;
+            
+            return dd.toFixed(0);
+        }
+        var B7 =  profit2year(amount);
+        var pd2y = parseInt(B7)+amount;
          
          
         
@@ -47,6 +62,11 @@ $(document).ready(function () {
             
             $("#profit").val(profit(amount,months));
             $("#profitdeposit").val(profitdepoist(amount,months));
+            $("#profit1year").val(B6);
+            $("#profit2year").val(B7);
+
+            $("#profitdeposit1y").val(parseInt(pd1y));
+            $("#profitdeposit2y").val(parseInt(pd2y));
             var np1 = cal(0.48,1);
             $("#npy1").val(np1);
             var np2 = cal(0.96,2);
