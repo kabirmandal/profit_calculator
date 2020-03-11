@@ -2,7 +2,7 @@ body {
   background-color: #6495f0;
 }
 .card {
- max-width: 30em;
+ max-width: 50em;
  padding: 7px;
 }
 .card-header{
@@ -16,3 +16,14 @@ body {
 label{
   font-weight: bold;
 }
+.bg-1{
+	background-color:#68ccfe !important;
+}
+
+.bg-2{
+	background-color:#0056ff !important;
+}
+.bg-3{
+	background-color:#151794 !important;
+}
+

@@ -40,7 +40,7 @@ $(document).ready(function () {
             return dd.toFixed(0);
         }
         var B6 =  profit1year(amount);
-        var pd1y = parseInt(B6)+mpp/100;
+        var pd1y = parseInt(B6)+amount;
 
         function profit2year(B1){
             var dd = B1*(1+0.96/269) ** (2*269)-B1;
