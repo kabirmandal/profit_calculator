@@ -5,6 +5,16 @@ $(document).ready(function () {
         var months = parseFloat($("#months").val()); // months B4
         var iic = $("#iic").val(); // Interest is Compounded
 
+        function formater(num){
+            var value = new Intl.NumberFormat('en-US', {
+                style: 'currency',
+                currencyDisplay: 'symbol',
+                currency: 'EUR'
+            }).format(num);
+            return value;
+            
+        }
+
         
         function calc(x,y){
         
@@ -23,34 +33,47 @@ $(document).ready(function () {
             return parseInt(dd);
          }
         function ytgcal(B1,B4){
-            var dd = B1*(1+((0.48*B4)/269)) ** (B4*269)+B1;  console.log(dd);
-            return parseInt(dd);
+            var dd = B1*(1+((0.48*B4)/269)) ** (B4*269)+B1;  
+            return formater(dd);
+          //  return parseInt(dd);
            
         }
         function profit(B1,B4){
            var dd = B1*((1+((0.04*B4)/(B4*20))) ** (B4*20))-B1;
-           return dd.toFixed(0);
+           return formater(dd);
+          // return dd.toFixed(0);
         }
         function profitdepoist(B1,B4){
             var dd = B1*(1+((0.04*B4)/(B4*20))) ** (B4*20);
-          
-            return dd.toFixed(0);
+            return formater(dd);
+           // return dd.toFixed(0);
         }
+
+        function retnum(str) { 
+            var num = str.replace(/[^0-9]/g, ''); 
+            return parseInt(num,10); 
+        }
+
         function profit1year(B1){
             var dd = B1*(1+0.48/269) ** (1*269)-B1;
-          
+           // return formater(dd);
             return dd.toFixed(0);
         }
+        
         var B6 =  profit1year(amount);
         var pd1y = parseInt(B6)+amount;
+         pd1y = formater(pd1y);
+       
+      
 
         function profit2year(B1){
             var dd = B1*(1+0.96/269) ** (2*269)-B1;
-            
+           // return formater(dd);
             return dd.toFixed(0);
         }
         var B7 =  profit2year(amount);
         var pd2y = parseInt(B7)+amount;
+            pd2y = formater(pd2y);
          
          
         
@@ -64,11 +87,12 @@ $(document).ready(function () {
             
             $("#profit").val(profit(amount,months));
             $("#profitdeposit").val(profitdepoist(amount,months));
-            $("#profit1year").val(B6);
-            $("#profit2year").val(B7);
+            $("#profit1year").val(formater(B6));
+            $("#profit2year").val(formater(B7));
 
-            $("#profitdeposit1y").val(parseInt(pd1y));
-            $("#profitdeposit2y").val(parseInt(pd2y));
+            $("#profitdeposit1y").val(pd1y);
+            $("#profitdeposit2y").val(pd2y);
+
             var np1 = cal(0.48,1);
             $("#npy1").val(np1);
             var np2 = cal(0.96,2);
