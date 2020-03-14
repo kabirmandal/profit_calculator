@@ -4,6 +4,8 @@ $(document).ready(function () {
         var mpp = parseFloat($("#mpp").val()); // Monthly profit percent
         var months = parseFloat($("#months").val()); // months B4
         var iic = $("#iic").val(); // Interest is Compounded
+
+        
         function calc(x,y){
         
         var m = 1+x/269;
